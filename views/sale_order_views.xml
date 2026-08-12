@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_order_form_inherit_peachtree_layout" model="ir.ui.view">
-        <field name="name">sale.order.form.inherit.peachtree.layout</field>
+    <record id="view_order_form_inherit_custom_line_description" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.custom.line.description</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <!-- Hacer la columna de descripción libre bien visible y editable con el título 'Descripción' -->
+            <!-- Quitar widget="section_and_note_text" para que se muestre como columna de texto visible e independiente -->
             <xpath expr="//field[@name='order_line']/list/field[@name='name']" position="attributes">
+                <attribute name="widget">text</attribute>
                 <attribute name="optional"></attribute>
                 <attribute name="string">Descripción / Nombre</attribute>
             </xpath>
 
-            <!-- Renombrar 'Producto' a 'Item / SKU' como en Peachtree -->
+            <!-- Cambiar etiqueta de Producto a Item / SKU estilo Peachtree -->
             <xpath expr="//field[@name='order_line']/list/field[@name='product_id']" position="attributes">
                 <attribute name="string">Item / SKU</attribute>
             </xpath>
 
-            <!-- Campo técnico invisible -->
+            <!-- Guardar bandera técnica invisible -->
             <xpath expr="//field[@name='order_line']/list" position="inside">
                 <field name="is_custom_name" column_invisible="True"/>
             </xpath>

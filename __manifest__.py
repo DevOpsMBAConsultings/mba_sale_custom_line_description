@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'MBA Sale Custom Line Description',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
     'category': 'Sales/Sales',
     'summary': 'Preserva la descripción personalizada ingresada por el usuario en líneas de cotización evitando sobrescrituras automáticas (MBA Consultings)',
     'author': 'MBA Consultings',
